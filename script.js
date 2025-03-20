@@ -22,6 +22,13 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 async function getThemeFromGroq(userInput) {
+    const apiKey = window.ENV?.API_KEY; 
+ 
+     if (!apiKey) {
+         console.error("API key is missing!");
+         return "/* Error: API key is missing */";
+     }
+    
     const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
         method: "POST",
         headers: {
