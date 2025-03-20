@@ -22,13 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 async function getThemeFromGroq(userInput) {
-    const apiKey = window.ENV?.API_KEY; 
-
-    if (!apiKey) {
-        console.error("API key is missing!");
-        return "/* Error: API key is missing */";
-    }
-
     const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
         method: "POST",
         headers: {
@@ -40,11 +33,21 @@ async function getThemeFromGroq(userInput) {
             messages: [
                 {
                     role: "system",
-                    content: "You are a CSS expert. Generate only CSS code without explanations. Focus on styling for a card component with header, body, footer, and buttons. All selectors should be prefixed with '#preview' to ensure styles only apply to the preview section."
+                    content: `You are a CSS expert. Generate only raw CSS with no explanations.
+                    - The theme should be applied **to the entire card**, not just the preview container.
+                    - Background and text colors **must ensure high contrast for readability**.
+                    - All card elements (**header, body, footer, buttons**) should match the theme.
+                    - **Buttons should inherit the theme’s colors** and have proper contrast.
+                    - **Hover effects should be limited to buttons and links**.
+                    - All selectors must be prefixed with "#preview" to prevent global styling.`
                 },
                 {
                     role: "user",
-                    content: `Generate a CSS theme based on this description: ${userInput}. Include styles for #preview .preview-card, #preview .preview-card-header, #preview .preview-card-body, #preview .preview-card-footer, and #preview .preview-card-body button elements. Make sure all selectors are prefixed with '#preview' to scope the styling only to the preview area.`
+                    content: `Generate a CSS theme based on this description: ${userInput}.
+                    - The theme must apply to **#preview .preview-card** and all its child elements.
+                    - Ensure **header, body, footer, and buttons** are fully themed.
+                    - **No global text hover effects**; only buttons and links should have them.
+                    - Make sure **text remains readable against the background color**.`
                 }
             ],
             max_tokens: 500
@@ -56,9 +59,12 @@ async function getThemeFromGroq(userInput) {
     }
 
     const data = await response.json();
-    console.log("API Response:", data);
 
-    return data.choices?.[0]?.message?.content?.trim() || "/* Error: No theme generated */";
+    let themeCSS = data.choices?.[0]?.message?.content?.trim() || "/* Error: No theme generated */";
+
+    themeCSS = themeCSS.replace(/```css|```/g, "").trim();
+
+    return themeCSS;
 }
 
 function applyCSS(cssRules) {
