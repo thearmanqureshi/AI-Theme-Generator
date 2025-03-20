@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Theme Customizer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="Logo.jpg" type="image/x-icon">
+</head>
+
+<body>
+    <h1>AI-Generated UI Theme Customizer</h1>
+    
+    <div class="container">
+        <div class="input-section">
+            <textarea id="themeInput" placeholder="Describe your theme (e.g., Dark mode with neon blue accents)"></textarea>
+            <button id="generateTheme">Generate Theme</button>
+        </div>
+        
+        <div class="flex-container">
+            <div class="input-column">
+                <h3>Generated CSS:</h3>
+                <pre id="cssOutput">/* CSS will appear here */</pre>
+            </div>
+            
+            <div class="preview-column">
+                <h3>Theme Preview:</h3>
+                <div id="preview">
+                    <div class="preview-card">
+                        <div class="preview-card-header">Card Title</div>
+                        <div class="preview-card-body">
+                            <p>This is a sample card that shows how your theme will look.</p>
+                            <button>Sample Button</button>
+                        </div>
+                        <div class="preview-card-footer">Card Footer</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/api/env.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
