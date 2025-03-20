@@ -36,7 +36,7 @@ async function getThemeFromGroq(userInput) {
             "Authorization": `Bearer ${apiKey}`
         },
         body: JSON.stringify({
-            model: "llama3-70b-8192",
+            model: "mistral-saba-24b",
             messages: [
                 {
                     role: "system",
