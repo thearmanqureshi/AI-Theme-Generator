@@ -22,12 +22,18 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 async function getThemeFromGroq(userInput) {
-    const apiKey = window.ENV.API_KEY;
+    const apiKey = window.ENV?.API_KEY; 
+
+    if (!apiKey) {
+        console.error("API key is missing!");
+        return "/* Error: API key is missing */";
+    }
+
     const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Authorization": "Bearer ${window.ENV.API_KEY}"
+            "Authorization": `Bearer ${apiKey}`
         },
         body: JSON.stringify({
             model: "llama3-70b-8192",
@@ -52,14 +58,15 @@ async function getThemeFromGroq(userInput) {
     const data = await response.json();
     console.log("API Response:", data);
 
-    return data.choices && data.choices[0] && data.choices[0].message 
-        ? data.choices[0].message.content.trim() 
-        : "/* Error: No theme generated */";
+    return data.choices?.[0]?.message?.content?.trim() || "/* Error: No theme generated */";
 }
 
 function applyCSS(cssRules) {
-    const styleTag = document.getElementById("themeStyle") || document.createElement("style");
-    styleTag.id = "themeStyle";
+    let styleTag = document.getElementById("themeStyle");
+    if (!styleTag) {
+        styleTag = document.createElement("style");
+        styleTag.id = "themeStyle";
+        document.head.appendChild(styleTag);
+    }
     styleTag.textContent = cssRules;
-    document.head.appendChild(styleTag);
 }
