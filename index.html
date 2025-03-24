@@ -4,43 +4,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Theme Customizer</title>
+    <title>AI Theme Generator</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- Prism.js Theme -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css">
+
+    <!-- Boxicons Import -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Custom CSS -->
     <link rel="shortcut icon" href="images/Logo.jpg" type="image/x-icon">
+
+    <!-- HTML Meta Tags -->
+    <meta name="author" content="Arman Qureshi">
+    <meta name="description"
+        content="UI Theme Generator that uses Groq API to Generate Theme based on the Prompt given by the User">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://themegenerator.vercel.app">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="AI Theme Generator">
+    <meta property="og:description"
+        content="UI Theme Generator that uses Groq API to Generate Theme based on the Prompt given by the User">
+    <meta property="og:image"
+        content="https://opengraph.b-cdn.net/production/images/6bf70029-68e8-4d96-b7ef-52a94767843e.png?token=F4sG26kKTauQT3MVb5o0B_MQg2wHigOqYYayT3Agegc&height=675&width=1200&expires=33278804475">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="themegenerator.vercel.app">
+    <meta property="twitter:url" content="https://themegenerator.vercel.app">
+    <meta name="twitter:title" content="AI Theme Generator">
+    <meta name="twitter:description"
+        content="UI Theme Generator that uses Groq API to Generate Theme based on the Prompt given by the User">
+    <meta name="twitter:image"
+        content="https://opengraph.b-cdn.net/production/images/6bf70029-68e8-4d96-b7ef-52a94767843e.png?token=F4sG26kKTauQT3MVb5o0B_MQg2wHigOqYYayT3Agegc&height=675&width=1200&expires=33278804475">
+
 </head>
 
 <body>
-    <h1>AI-Generated UI Theme Customizer</h1>
-    
-    <div class="container">
-        <div class="input-section">
-            <textarea id="themeInput" placeholder="Describe your theme (e.g., Dark mode with neon blue accents)"></textarea>
-            <button id="generateTheme">Generate Theme</button>
-        </div>
-        
-        <div class="flex-container">
-            <div class="input-column">
-                <h3>Generated CSS:</h3>
-                <pre id="cssOutput">/* CSS will appear here */</pre>
+    <header>
+        <h1>AI Theme Generator</h1>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="input-section">
+                <textarea id="themeInput"
+                    placeholder="Describe your theme (e.g. Dark mode with neon blue accents)"></textarea>
+                <button id="generateTheme">Generate Theme</button>
             </div>
-            
-            <div class="preview-column">
-                <h3>Theme Preview:</h3>
-                <div id="preview">
-                    <div class="preview-card">
-                        <div class="preview-card-header">Card Title</div>
-                        <div class="preview-card-body">
-                            <p>This is a sample card that shows how your theme will look.</p>
-                            <button>Sample Button</button>
+
+            <div class="flex-container">
+                <div class="input-column">
+                    <h3>Generated CSS:</h3>
+                    <pre id="cssOutput"><code class="language-css">/* CSS will appear here */</code></pre>
+                </div>
+
+                <div class="preview-column">
+                    <h3>Theme Preview:</h3>
+                    <div id="window">
+                        <div id="preview">
+                            <div class="preview-card">
+                                <div class="preview-card-header">Card Title</div>
+                                <div class="preview-card-body">
+                                    <p>This is a sample card that shows how your theme will look.</p>
+                                    <button>Sample Button</button>
+                                </div>
+                                <div class="preview-card-footer">Card Footer</div>
+                            </div>
                         </div>
-                        <div class="preview-card-footer">Card Footer</div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
-    <script src="api/env.js"></script>
+    <footer>
+        <div id="socials">
+            <a href="mailto:thearmanqureshi@gmail.com" aria-label="E-Mail Me"><i class='bx bxs-envelope'></i></a>
+            <a href="https://github.com/thearmanqureshi" aria-label="GitHub Profile"><i class='bx bxl-github'></i></a>
+            <a href="https://linkedin.com/in/thearmanqureshi" aria-label="Linkedin Profile"><i
+                    class='bx bxl-linkedin-square'></i></a>
+        </div>
+        <div id="author">
+            <p>Arman Qureshi</p>
+        </div>
+    </footer>
+
+    <!-- Prism.js Core -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+
+    <!-- CSS Language Support -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js"></script>
+
+    <!-- API Key Env -->
+    <script src="/api/env.js"></script>
+
+    <!-- Custom JS -->
     <script src="script.js"></script>
 </body>
 
