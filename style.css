@@ -1,127 +1,195 @@
+/* Google Font Import */
+@import url("https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Global Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 1200px;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: #f1f5f9;
 }
 
+/* Header */
 h1 {
-    text-align: center;
-    margin-bottom: 30px;
+  font-family: "Philosopher", sans-serif;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
+/* Main */
 .container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: auto;
 }
 
 .input-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 50px;
-    width: 100%;
-    margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.flex-container h3 {
+  font-family: "poppins", sans-serif;
+  font-weight: 500;
 }
 
 .input-column {
-    flex: 1;
-    min-width: 300px;
+  flex: 1;
+  min-width: 300px;
 }
 
 .preview-column {
-    flex: 1;
-    min-width: 300px;
+  flex: 1;
+  min-width: 300px;
 }
 
 textarea {
-    width: 100%;
-    height: 100px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    resize: vertical;
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+textarea:focus {
+  outline: 1px solid #94a3b8;
 }
 
 #generateTheme {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-    font-size: 16px;
+  padding: 10px 20px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 16px;
+  transition: background 0.2s ease-in-out;
 }
 
 #generateTheme:hover {
-    background-color: #45a049;
+  background-color: #1e40af;
+}
+
+#window {
+  width: 100%;
+  height: 300px;
+  margin-top: 10px;
+  background-image: url(images/window.jpg);
+  padding: 10px;
+  border-radius: 8px;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #preview {
-    width: 100%;
-    height: 200px;
-    padding: 20px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  height: 200px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Default styling for preview card */
 #preview .preview-card {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
+  background-color: white;
+  width: 100%;
 }
 
 #preview .preview-card-header {
-    padding: 15px;
-    border-bottom: 1px solid #eee;
-    font-weight: bold;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  font-weight: bold;
 }
 
 #preview .preview-card-body {
-    padding: 20px;
+  padding: 20px;
 }
 
 #preview .preview-card-body button {
-    padding: 8px 16px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+  padding: 8px 16px;
+  background-color: #64748b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s ease-in-out;
+}
+
+#preview .preview-card-body button:hover {
+  background-color: #475569;
 }
 
 #preview .preview-card-footer {
-    padding: 15px;
-    border-top: 1px solid #eee;
-    text-align: right;
+  padding: 15px;
+  border-top: 1px solid #eee;
+  text-align: right;
 }
 
 pre {
-    background-color: #f5f5f5;
-    padding: 15px;
-    border-radius: 5px;
-    overflow-x: auto;
-    margin-top: 20px;
-    width: 100%;
+  background-color: #f5f5f5;
+  padding: 15px;
+  border-radius: 5px;
+  overflow-x: auto;
+  margin-top: 20px;
+  width: 100%;
 }
 
 .output-section {
-    margin-top: 20px;
-    width: 100%;
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* Footer */
+footer {
+  margin-top: auto;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#socials > a {
+  color: black;
+  font-size: 1.5rem;
+  transition: color 0.2s;
+}
+
+#socials > a:hover {
+  color: grey;
+}
+
+#author p {
+  font-family: "Philosopher", sans-serif;
+  font-weight: 800;
 }
