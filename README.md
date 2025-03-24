@@ -1,7 +1,7 @@
 # AI Theme Generator
 
 ## Overview
-The **AI-Generated UI Theme Customizer** is a web-based application that leverages AI to generate custom UI themes based on user preferences. This tool is designed to help developers and designers quickly create aesthetically pleasing themes for web applications.
+The **AI Theme Generator** is a web-based application that leverages AI to generate custom UI themes based on user preferences. This tool is designed to help developers and designers quickly create aesthetically pleasing themes for web applications.
 
 ## Features
 - AI-powered theme generation based on user input
@@ -18,7 +18,7 @@ The **AI-Generated UI Theme Customizer** is a web-based application that leverag
 ## Installation
 ### Prerequisites
 Ensure you have the following installed:
-- Node.js (Env API Key Or Set Manually)
+- Node.js (Env API Key Or Set API Key Manually)
 - Vercel CLI (for deployment)
 
 ### Steps
