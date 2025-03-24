@@ -45,7 +45,7 @@ To deploy on Vercel:
    ```
 
 ## Usage
-1. Visit the deployed application.
+1. [Visit](https://themegenerator.vercel.app) the deployed application.
 2. Input your preferences (color scheme, typography, etc.).
 3. Generate a theme using AI.
 4. Preview and export the generated theme for integration into your project.
