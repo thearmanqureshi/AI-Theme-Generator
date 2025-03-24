@@ -17,7 +17,7 @@ The **AI Theme Generator** is a web-based application that leverages AI to gener
 
 ## Preview
 ![Desktop Preview](https://opengraph.b-cdn.net/production/images/6bf70029-68e8-4d96-b7ef-52a94767843e.png?token=F4sG26kKTauQT3MVb5o0B_MQg2wHigOqYYayT3Agegc&height=675&width=1200&expires=33278804475)
-<img src="https://github.com/thearmanqureshi/AI-Theme-Generator/blob/5d2734037bff05fee577146a6f3add144e77c39b/images/Mobile%20Preview.jpg" alt="Mobile Preview" width="40%">
+![Mobile Preview](https://opengraph.b-cdn.net/production/images/aafb81c8-0ae1-4c34-a629-f0200d36872f.png?token=WfTPI9HLssFt0mqYbkuDWirdYdrgqYZJGVP-wVlX9C8&height=555&width=1200&expires=33278811032)
 
 ## Installation
 ### Prerequisites
