@@ -15,6 +15,9 @@ The **AI Theme Generator** is a web-based application that leverages AI to gener
 - **AI Integration:** Groq API
 - **Deployment:** Vercel
 
+## Preview
+![AI Theme Generator](https://opengraph.b-cdn.net/production/images/6bf70029-68e8-4d96-b7ef-52a94767843e.png?token=F4sG26kKTauQT3MVb5o0B_MQg2wHigOqYYayT3Agegc&height=675&width=1200&expires=33278804475)
+
 ## Installation
 ### Prerequisites
 Ensure you have the following installed:
