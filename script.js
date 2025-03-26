@@ -90,7 +90,7 @@ async function getThemeFromGroq(userInput) {
                     "Authorization": `Bearer ${apiKey}`
                 },
                 body: JSON.stringify({
-                    model: "deepseek-r1-distill-llama-70b",
+                    model: "deepseek-r1-distill-qwen-32b",
                     messages: [
                         {
                             role: "system",
