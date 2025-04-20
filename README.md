@@ -12,7 +12,7 @@ The **AI Theme Generator** is a web-based application that leverages AI to gener
 
 ## Tech Stack
 - **Frontend:** HTML, CSS, JavaScript
-- **AI Integration:** Groq API
+- **AI Integration:** Groq API (LLaMA 3)
 - **Deployment:** Vercel
 
 ## Preview
