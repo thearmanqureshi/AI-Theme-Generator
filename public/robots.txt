@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://themegenerator.vercel.app/sitemap.xml
