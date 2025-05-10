@@ -197,7 +197,8 @@ pre {
 
 /* Footer */
 footer {
-  padding-inline: 20px;
+  margin-top: auto;
+  padding-block: 20px;
   width: 100%;
   height: 100px;
   display: flex;
